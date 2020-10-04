@@ -10,29 +10,27 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         resizeToAvoidBottomPadding: false,
-        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: <
-            Widget>[
+        body: ListView(children: <Widget>[
           Container(
             child: Stack(
               children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    }),
                 Container(
-                  padding: EdgeInsets.fromLTRB(40.0, 180.0, 0.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(40.0, 50.0, 0.0, 0.0),
                   child: Text(
-                    'Create Account',
+                    'Create\nAccount',
                     style:
-                        TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 50.0, fontWeight: FontWeight.bold),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(315.0, 145.0, 0.0, 0.0),
-                  child: Text(
-                    '.',
-                    style: TextStyle(
-                        fontSize: 50.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black),
-                  ),
-                )
               ],
             ),
           ),
@@ -41,6 +39,7 @@ class _SignupPageState extends State<SignupPage> {
               child: Column(
                 children: <Widget>[
                   TextField(
+                    
                     decoration: InputDecoration(
                         labelText: 'FULL NAME ',
                         labelStyle: TextStyle(
@@ -75,7 +74,6 @@ class _SignupPageState extends State<SignupPage> {
                     obscureText: true,
                   ),
                   SizedBox(height: 10.0),
-                  
                   SizedBox(height: 40.0),
                   Container(
                       height: 40.0,
@@ -113,22 +111,17 @@ class _SignupPageState extends State<SignupPage> {
                         onTap: () {
                           Navigator.of(context).pop();
                         },
-                        child: 
-                        
-                            Center(
-                              child: Text('Go Back',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'Montserrat')),
-                            ),
-                        
-                        
+                        child: Center(
+                          child: Text('Go Back',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat')),
+                        ),
                       ),
                     ),
                   ),
                 ],
               )),
-          
         ]));
   }
 }
